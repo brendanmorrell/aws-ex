@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+const { HotModuleReplacementPlugin } = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -40,8 +40,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ title: 'template', template: 'template.html' }),
     new MiniCssExtractPlugin({ filename: 'bundle.css' }),
+    new HotModuleReplacementPlugin(),
   ],
-  // resolve: {
-  //   extensions: ['.js', '.jsx', '.scss', '.css', '.sass'],
-  // },
+  devServer: {
+    compress: true,
+    port: 3000,
+    hot: true,
+  },
 };
