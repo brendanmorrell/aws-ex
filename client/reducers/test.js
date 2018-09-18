@@ -15,11 +15,11 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_TEST:
-      const { payload: test } = action;
-      const { id } = test;
-      const byID = { ...state.byID, test };
-      const allIDs = state.allIDs.filter(x => x !== id).concat(id);
-      return { byID, allIDs };
+      return {
+        ...state,
+        byID: { ...state.byID, [action.payload.id]: action.payload },
+        allIDs: state.allIDs.filter(x => x !== action.payload.id).concat(action.payload.id),
+      };
     default:
       return state;
   }
