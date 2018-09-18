@@ -8,7 +8,7 @@ module.exports = {
   entry: path.join(__dirname, 'client', 'index.js'),
   context: path.join(__dirname, 'client'),
   output: {
-    path: path.join(__dirname, 'client', 'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
