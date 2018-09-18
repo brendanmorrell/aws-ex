@@ -37,7 +37,7 @@ export class ComponentNeedingStorage extends Component {
           }
           return (
             <div>
-              My username is {username}, and I love to watch {favoriteMovie}.
+              My username is {username}, and I love to watch {favoriteMovie}!!!
             </div>
           );
         }}
