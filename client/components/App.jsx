@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { ComponentNeedingStorage } from './ComponentNeedingStorage.jsx';
 import { Provider } from 'react-redux';
-import Redux from './Redux.jsx';
 import store from '../store/configureStore.js';
+
+import Redux from './Redux.jsx';
+import { ComponentNeedingStorage } from './ComponentNeedingStorage.jsx';
+import WithColoredBorder from './Parent.jsx';
 // export class App extends Component {
 //   state = { x: 0, y: 0 };
 //   handleMouseMove = e => {
@@ -26,6 +28,17 @@ export class App extends Component {
         <div>
           <ComponentNeedingStorage />
           <Redux />
+          {0 || <p>heyo</p>}
+          {0 && <p>heyo</p>}
+          <p>asasas</p>
+          <WithColoredBorder
+            render={color => {
+              <div style={{ border: `1px solid ${color}` }} />;
+            }}
+            children={<h1>this should display</h1>}
+          >
+            this overwrites the h1 children
+          </WithColoredBorder>
         </div>
       </Provider>
     );
