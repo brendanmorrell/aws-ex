@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
-import { ComponentNeedingStorage } from './ComponentNeedingStorage.jsx';
 import { Provider } from 'react-redux';
-import Redux from './Redux.jsx';
-import store from '../store/configureStore.js';
-// export class App extends Component {
-//   state = { x: 0, y: 0 };
-//   handleMouseMove = e => {
-//     this.setState({ x: e.clientX, y: e.clientY });
-//   };
-//   render() {
-//     return (
-//       <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
-//         <h1>Move the mouse around!!!!</h1>
-//         <p>x: {this.state.x}</p>
-//         <p>y: {this.state.y}</p>
-//       </div>
-//     );
-//   }
-// }
 
+import Mouse from './Mouse.jsx';
+import Amount from './Amount.jsx';
+import store from '../store/configureStore.js';
+// import FetchBetStatsContainer from './FetchBetStatsContainer.jsx';
+/* <FetchBetStatsContainer /> */
+const Euro = ({ amount }) => <p>Euro: {amount * 0.86}</p>;
+const a = {};
+const b = { c: { d: {} } };
+// a?.b?.c
+Pound = ({ amount }) => <p>Pound: {amount * 0.76}</p>;
+import ConstructorSuper from './ConstructorSuper.jsx';
 export class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div>
-          <ComponentNeedingStorage />
-          <Redux />
+          {/* <Mouse message="hello world" />
+          <Amount>
+            {({ amount }) => (
+              <div>
+                <Euro amount={amount} />
+                <Pound amount={amount} />
+              </div>
+            )}
+          </Amount> */}
+
+          <ConstructorSuper parentProp />
         </div>
       </Provider>
     );
