@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-<<<<<<< HEAD
-=======
 import store from '../store/configureStore.js';
 
 import Redux from './Redux.jsx';
@@ -22,7 +20,6 @@ import WithColoredBorder from './Parent.jsx';
 //     );
 //   }
 // }
->>>>>>> 81372aa7486dfadd99a05faea1011155930dba15
 
 import Mouse from './Mouse.jsx';
 import Amount from './Amount.jsx';
@@ -40,19 +37,6 @@ export class App extends Component {
     return (
       <Provider store={store}>
         <div>
-<<<<<<< HEAD
-          {/* <Mouse message="hello world" />
-          <Amount>
-            {({ amount }) => (
-              <div>
-                <Euro amount={amount} />
-                <Pound amount={amount} />
-              </div>
-            )}
-          </Amount> */}
-
-          <ConstructorSuper parentProp />
-=======
           <ComponentNeedingStorage />
           <Redux />
           {0 || <p>heyo</p>}
@@ -66,7 +50,6 @@ export class App extends Component {
           >
             this overwrites the h1 children
           </WithColoredBorder>
->>>>>>> 81372aa7486dfadd99a05faea1011155930dba15
         </div>
       </Provider>
     );
